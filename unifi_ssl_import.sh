@@ -8,7 +8,6 @@
 # Version 2.8
 
 # CONFIGURATION OPTIONS
-UNIFI_HOSTNAME=
 UNIFI_SERVICE=unifi
 
 # Uncomment following three lines for Debian/Ubuntu
