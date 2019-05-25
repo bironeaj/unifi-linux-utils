@@ -6,23 +6,9 @@
 # Part of https://github.com/stevejenkins/ubnt-linux-utils/
 # Incorporates ideas from https://source.sosdg.org/brielle/lets-encrypt-scripts
 # Version 2.8
-# Last Updated Jan 13, 2017
-
-# REQUIREMENTS
-# 1) Assumes you have a UniFi Controller installed and running on your system.
-# 2) Assumes you already have a valid 2048-bit private key, signed certificate, and certificate authority
-#    chain file. The Controller UI will not work with a 4096-bit certificate. See http://wp.me/p1iGgP-2wU
-#    for detailed instructions on how to generate those files and use them with this script.
-
-# KEYSTORE BACKUP
-# Even though this script attempts to be clever and careful in how it backs up your existing keystore,
-# it's never a bad idea to manually back up your keystore (located at $UNIFI_DIR/data/keystore on RedHat
-# systems or /$UNIFI_DIR/keystore on Debian/Ubunty systems) to a separate directory before running this
-# script. If anything goes wrong, you can restore from your backup, restart the UniFi Controller service,
-# and be back online immediately.
 
 # CONFIGURATION OPTIONS
-UNIFI_HOSTNAME=hostname.example.com
+UNIFI_HOSTNAME=
 UNIFI_SERVICE=unifi
 
 # Uncomment following three lines for Fedora/RedHat/CentOS
@@ -31,18 +17,13 @@ JAVA_DIR=${UNIFI_DIR}
 KEYSTORE=${UNIFI_DIR}/data/keystore
 
 # Uncomment following three lines for Debian/Ubuntu
-#UNIFI_DIR=/var/lib/unifi
-#JAVA_DIR=/usr/lib/unifi
-#KEYSTORE=${UNIFI_DIR}/keystore
-
-# Uncomment following three lines for CloudKey
-#UNIFI_DIR=/var/lib/unifi
-#JAVA_DIR=/usr/lib/unifi
-#KEYSTORE=${JAVA_DIR}/data/keystore
+UNIFI_DIR=/var/lib/unifi
+JAVA_DIR=/usr/lib/unifi
+KEYSTORE=${UNIFI_DIR}/keystore
 
 # FOR LET'S ENCRYPT SSL CERTIFICATES ONLY
 # Generate your Let's Encrtypt key & cert with certbot before running this script
-LE_MODE=no
+LE_MODE=yes
 LE_LIVE_DIR=/etc/letsencrypt/live
 
 # THE FOLLOWING OPTIONS NOT REQUIRED IF LE_MODE IS ENABLED
