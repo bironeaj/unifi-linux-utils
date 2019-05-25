@@ -11,11 +11,6 @@
 UNIFI_HOSTNAME=
 UNIFI_SERVICE=unifi
 
-# Uncomment following three lines for Fedora/RedHat/CentOS
-UNIFI_DIR=/opt/UniFi
-JAVA_DIR=${UNIFI_DIR}
-KEYSTORE=${UNIFI_DIR}/data/keystore
-
 # Uncomment following three lines for Debian/Ubuntu
 UNIFI_DIR=/var/lib/unifi
 JAVA_DIR=/usr/lib/unifi
